@@ -1,5 +1,4 @@
 """Simple Streamlit BFS app. Run: python -m streamlit run bfs_simple.py"""
-import json
 from collections import deque
 
 import streamlit as st
@@ -31,7 +30,7 @@ default_graph = {
 }
 text = st.sidebar.text_area("Edit graph (JSON)", json.dumps(default_graph, indent=2), height=300)
 try:
-    graph = json.loads(text)
+
     if not isinstance(graph, dict) or not graph:
         raise ValueError("Use a non-empty JSON object.")
     for neighbours in list(graph.values()):
